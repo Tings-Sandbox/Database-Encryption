@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Password Manager</title>
+		<link href="{{url_for('static', filename='style.css')}}" type="text/css" rel="StyleSheet" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+		</script>
+		<script type="text/javascript" src="{{url_for('static', filename='script.js')}}">
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Youber Password Portal</h1>
+			<div id="location">
+			</div>
+		</div>
+		<div id="content">
+			{% block content %}
+			{% endblock %}
+		</div>
+	</body>
+</html>

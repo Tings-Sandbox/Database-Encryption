@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<p>Decrypted passwords:</p>
+<table id="keys">
+<thead>
+	<th>Key</th>
+	<th>Value</th>
+</thead>
+<tbody>
+{% for k, v in db.items(): %}
+	<tr>
+	<td>{{ k | safe }}</td>
+	<td>{{ v | safe }}</td>
+	</tr>
+{% endfor %}
+</tbody>
+</table>
+<a href="/logout">Logout</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+	<form action="/show" method="get">
+		<p>Welcome to the Youber password management portal</p>
+		<p>To begin, please enter the database unlock password:</p>
+		<label for="password">Password:</label>
+		<input name="password" type="password" id="password" /><input type="submit" value="Submit" />
+	</form>
+{% endblock %}
