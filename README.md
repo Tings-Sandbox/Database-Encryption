@@ -13,6 +13,7 @@ npm install
 node index.js
 ```
 Read [Uber Challenge.docx] for information on how I approached the problem!
+Tip: open the encrypted database in sublime to analyze the bytes. 
 
 ###Terminology
 MD5 - The most widely used hashing system. It's 128-bit and produces a 32-character message digest.
@@ -20,6 +21,17 @@ MD5 - The most widely used hashing system. It's 128-bit and produces a 32-charac
 AES Algorithm encrypts data using a key and an optional iv. 
 AES, as a block cipher, does not change the size. The input size is always the output size.
 But AES, being a block cipher, requires the input to be multiple of block size (16 bytes). For this, padding schemes are used like the popular PKCS5. So the answer is that the size of your encrypted data depends on the padding scheme used. But at the same time all known padding schemes will round up to the next module 16 size (size AES has a 16 bytes block size).
+
+AES - a symmetric key algorithm/ same key for encrypting and decrypting the data
+MD5 - a hash function producing a 128 bit (16 bytes) hash value typically represented as a 32 bit hexadecimal number. It's a one way function, and is neither encryption nor encoding 
+Ox30- Ox39 - numbers 0-9 in hexadecimal
+Ox41:Ox5A and Ox61:Ox7A - alphabet 
+padding- some strings encypted with AES shall be padded out to multiple of the cipher block length using the PKCS#7 padding algorithm, whereby you append M bytes (16 - (length of unpadded string % 16) ) to the end of the input string 
+Endianness - order of bytes
+Big endian - most significant bytes of a word first, then the least
+Little endian - opposite
+Big endian is more common in data networking, so Network Order is analogous to Big Endian. 
+UTF8 characters - each character is a byte long.
 
 
 ### Using AES-256-CTR in Encrypting and Decrypting 
